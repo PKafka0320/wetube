@@ -23,7 +23,8 @@ header
                         if user.avatarUrl === ""
                             span Profile
                         else
-                            if user.avtarUrl.includes("github")
-                                img.header__avatar(src=user.avatarUrl)
-                            else
-                                img.header__avatar(src="/"+user.avatarUrl)
+                            if user.avatarUrl
+                                if user.avatarUrl.includes("github")
+                                    img.header__avatar(src=user.avatarUrl, crossorigin)
+                                else
+                                    img.header__avatar(src=user.avatarUrl, crossorigin)
