@@ -12,11 +12,7 @@ const s3 = new aws.S3({
 const multerUploader = multerS3({
   s3: s3,
   bucket: "wetube-kafka",
-  Condition: {
-    StringEquals: {
-      "s3:x-amz-acl": ["public-read"],
-    },
-  },
+  acl: "public-read",
   contentType: multerS3.AUTO_CONTENT_TYPE,
 });
 
